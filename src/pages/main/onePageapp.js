@@ -9,24 +9,13 @@ export default class Main extends Component {
         super()
         this.state={
             input:'',
-            markedInput: ''
         }
     }
     handleChange(e){
         const markedContent = marked(e.target.value)
         this.setState({
             input: e.target.value,
-            markedInput: markedContent
         })
-    }
-    markedBox(){
-        const renderer = new marked.Renderer();
-        return (
-            React.createElement("div", {
-                dangerouslySetInnerHTML: {
-                    __html: marked(this.state.markdown, { renderer: renderer })
-                }    
-            }));
     }
     render() {
         return (
@@ -65,3 +54,5 @@ const Previewer = props =>{
         })
     )
 }
+
+ReactDOM.render(React.createElement(App, null), document.getElementById('app'));

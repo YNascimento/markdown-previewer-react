@@ -2,7 +2,7 @@ div{
     margin: 20px auto;
     text-align: center;
 }
-.editor{
+#editor{
     width: 60vw;
     height: 30vh;
     color: var(--secondary-color);
@@ -12,7 +12,7 @@ div{
     border-radius: 5px;
 }
 
-.previewer{
+#previewer{
     text-align: left;
     width: 60vw;
     height: 40vh;

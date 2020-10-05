@@ -32,10 +32,12 @@ export default class Main extends Component {
         return (
             React.createElement('div', null,
                 React.createElement(Editor, { //creates editor div
+                    className: 'editor',
                     input: this.state.input,
                     onChange: this.handleChange.bind(this)
                 }),
                 React.createElement(Previewer, { //creates previewer
+                    className: 'previewer',
                     input: this.state.input
                 }),
             )
@@ -46,7 +48,7 @@ export default class Main extends Component {
 const Editor = props =>{
     return (
         React.createElement('textarea',{
-            id: 'editor',
+            className: 'editor',
             onChange:props.onChange,
             type: 'text',
             value: props.input
@@ -56,7 +58,7 @@ const Editor = props =>{
 const Previewer = props =>{
     return (
         React.createElement('div',{
-            id: 'previewer',
+            className: 'previewer',
             dangerouslySetInnerHTML: {
                 __html: marked(props.input, {renderer: renderer})
             }
